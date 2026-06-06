@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /s/*
+Disallow: /app/
+Disallow: /admin/
+Disallow: /login
+Disallow: /signup
+
+Sitemap: https://pi-store.com/sitemap.xml

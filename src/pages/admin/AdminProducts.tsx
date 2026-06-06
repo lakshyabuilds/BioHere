@@ -199,7 +199,7 @@ export default function AdminProducts() {
                  <span className={`inline-flex px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-bg-card shadow-sm z-10 ${statusColors[p.status]}`}>
                     {p.status}
                  </span>
-                 <span className="text-[14px] font-bold text-text-inverted bg-text-main px-3 py-1 rounded-lg shadow-sm z-10 -mr-2">${p.price?.toFixed(2) || '0.00'}</span>
+                 <span className="text-[14px] font-bold text-text-inverted bg-text-main px-3 py-1 rounded-lg shadow-sm z-10 -mr-2">₹{p.price?.toFixed(2) || '0.00'}</span>
                </div>
                
                <h3 className="font-bold text-lg text-text-main mt-2 mb-1 tracking-tight line-clamp-1">{p.title}</h3>
@@ -288,9 +288,9 @@ export default function AdminProducts() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label htmlFor="p-price" className="block text-sm font-medium text-text-main tracking-tight">Price (USD)</label>
+                    <label htmlFor="p-price" className="block text-sm font-medium text-text-main tracking-tight">Base Price (₹)</label>
                     <div className="bg-bg-surface border border-border-subtle rounded-lg flex items-center focus-within:ring-1 focus-within:ring-accent focus-within:border-accent overflow-hidden px-0 shadow-sm">
-                      <span className="text-text-muted font-medium pl-3 pr-1 select-none text-sm">$</span>
+                      <span className="text-text-muted font-medium pl-3 pr-1 select-none text-sm">₹</span>
                       <input id="p-price" type="number" min="0" step="0.01" value={formData.price || 0} onChange={e => setFormData({...formData, price: parseFloat(e.target.value)})} className="w-full bg-transparent border-none py-2.5 pr-3 text-sm text-text-main font-semibold outline-none focus:outline-none focus:ring-0" />
                     </div>
                   </div>

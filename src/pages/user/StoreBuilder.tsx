@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { doc, getDoc, setDoc, updateDoc, collection, query, getDocs, where } from 'firebase/firestore';
 import { db } from '../../firebase';
-import { Store, Product } from '../../types';
+import { Store, StoreProduct } from '../../types';
 import { useAuth } from '../../contexts/AuthContext';
 import { Save, AlertCircle, Loader2, Store as StoreIcon, LayoutTemplate, Palette, Globe, Smartphone, Monitor, Package } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -13,12 +13,13 @@ function StoreBuilderContent() {
   const [store, setStore] = useState<Partial<Store>>({
     name: '',
     slug: '',
-    logo: '',
-    brandColor: '#171717',
-    bio: '',
-    selectedProductIds: []
+    logoUrl: '',
+    primaryColor: '#171717',
+    secondaryColor: '#f3f4f6',
+    accentColor: '#3b82f6',
+    bio: ''
   });
-  const [products, setProducts] = useState<Record<string, Product>>({});
+  const [storeProducts, setStoreProducts] = useState<StoreProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [exists, setExists] = useState(false);
@@ -39,19 +40,16 @@ function StoreBuilderContent() {
             setStore(sDoc.data() as Store);
             setExists(true);
           }
+          
+          // Fetch creator's store products context for preview
+          const pQ = query(collection(db, 'storeProducts'), where('storeId', '==', userProfile.storeId), where('isActive', '==', true));
+          const pSnap = await getDocs(pQ);
+          const pList: StoreProduct[] = [];
+          pSnap.docs.forEach(d => {
+             pList.push({ id: d.id, ...d.data() } as StoreProduct);
+          });
+          setStoreProducts(pList);
         }
-        
-        // Fetch all active products for the preview
-        const pQ = query(collection(db, 'products'));
-        const pSnap = await getDocs(pQ);
-        const pMap: Record<string, Product> = {};
-        pSnap.docs.forEach(d => {
-          const pd = d.data() as Product;
-          if (pd.status === 'active') {
-            pMap[d.id] = { id: d.id, ...pd };
-          }
-        });
-        setProducts(pMap);
       } catch (err) {
         setFatalError(err instanceof Error ? err : new Error('Failed to load store: ' + String(err)));
       } finally {
@@ -68,7 +66,6 @@ function StoreBuilderContent() {
     setFormError(null);
     
     try {
-      // Validate slug uniqueness
       const slugQuery = query(collection(db, 'stores'), where('slug', '==', store.slug));
       const slugSnap = await getDocs(slugQuery);
       const isTaken = slugSnap.docs.some(d => exists ? d.id !== userProfile.storeId : d.id !== currentUser.uid);
@@ -89,7 +86,6 @@ function StoreBuilderContent() {
         const newStore = {
           ...store,
           ownerId: currentUser.uid,
-          selectedProductIds: [],
           createdAt: new Date().toISOString()
         };
         await setDoc(doc(db, 'stores', newStoreId), newStore);
@@ -180,17 +176,40 @@ function StoreBuilderContent() {
               </div>
               <div>
                 <label htmlFor="store-logo" className="block text-sm font-bold text-text-main mb-2">Logo URL</label>
-                <input id="store-logo" type="url" value={store.logo || ''} onChange={e => setStore({...store, logo: e.target.value})} className="neo-input w-full h-12" placeholder="https://..." />
+                <input id="store-logo" type="url" value={store.logoUrl || ''} onChange={e => setStore({...store, logoUrl: e.target.value})} className="neo-input w-full h-12" placeholder="https://..." />
               </div>
-              <div>
-                <label htmlFor="store-brand" className="block text-sm font-bold text-text-main mb-2">Brand Color</label>
-                <div className="flex gap-4 items-center">
-                  <div className="w-12 h-12 rounded-lg border border-border-subtle overflow-hidden shrink-0">
-                    <input type="color" value={store.brandColor || '#171717'} onChange={e => setStore({...store, brandColor: e.target.value})} className="w-[150%] h-[150%] -translate-x-1/4 -translate-y-1/4 cursor-pointer" />
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="store-primary" className="block text-sm font-bold text-text-main mb-2">Primary Color</label>
+                  <div className="flex gap-2 items-center">
+                    <div className="w-10 h-10 rounded border border-border-subtle overflow-hidden shrink-0">
+                      <input type="color" value={store.primaryColor || '#171717'} onChange={e => setStore({...store, primaryColor: e.target.value})} className="w-[150%] h-[150%] -translate-x-1/4 -translate-y-1/4 cursor-pointer" />
+                    </div>
+                    <input id="store-primary" type="text" value={store.primaryColor || '#171717'} onChange={e => setStore({...store, primaryColor: e.target.value})} className="neo-input w-full h-10 uppercase text-xs" />
                   </div>
-                  <input id="store-brand" type="text" value={store.brandColor || '#171717'} onChange={e => setStore({...store, brandColor: e.target.value})} className="neo-input w-full h-12 uppercase" placeholder="#171717" />
+                </div>
+                <div>
+                  <label htmlFor="store-secondary" className="block text-sm font-bold text-text-main mb-2">Secondary Color</label>
+                  <div className="flex gap-2 items-center">
+                    <div className="w-10 h-10 rounded border border-border-subtle overflow-hidden shrink-0">
+                      <input type="color" value={store.secondaryColor || '#f3f4f6'} onChange={e => setStore({...store, secondaryColor: e.target.value})} className="w-[150%] h-[150%] -translate-x-1/4 -translate-y-1/4 cursor-pointer" />
+                    </div>
+                    <input id="store-secondary" type="text" value={store.secondaryColor || '#f3f4f6'} onChange={e => setStore({...store, secondaryColor: e.target.value})} className="neo-input w-full h-10 uppercase text-xs" />
+                  </div>
                 </div>
               </div>
+              
+              <div>
+                <label htmlFor="store-accent" className="block text-sm font-bold text-text-main mb-2">Accent Color</label>
+                <div className="flex gap-2 items-center">
+                  <div className="w-10 h-10 rounded border border-border-subtle overflow-hidden shrink-0">
+                     <input type="color" value={store.accentColor || '#3b82f6'} onChange={e => setStore({...store, accentColor: e.target.value})} className="w-[150%] h-[150%] -translate-x-1/4 -translate-y-1/4 cursor-pointer" />
+                  </div>
+                  <input id="store-accent" type="text" value={store.accentColor || '#3b82f6'} onChange={e => setStore({...store, accentColor: e.target.value})} className="neo-input w-full h-10 uppercase text-xs" />
+                </div>
+              </div>
+
               <div>
                 <label htmlFor="store-bio" className="block text-sm font-bold text-text-main mb-2">Bio / About</label>
                 <textarea id="store-bio" rows={4} value={store.bio || ''} onChange={e => setStore({...store, bio: e.target.value})} className="neo-input w-full py-3 resize-none" placeholder="Tell your customers about your store..." />
@@ -225,48 +244,45 @@ function StoreBuilderContent() {
            <div className="bg-bg-surface flex-1 rounded-2xl border border-border-subtle overflow-hidden flex items-center justify-center p-6 lg:p-12 min-h-[600px]">
               {/* Preview Containment Area */}
               <div 
-                className={`bg-white shadow-xl border border-border-subtle rounded-2xl border-t-8 overflow-hidden transition-all duration-300 ring-1 ring-border-subtle/50 ${previewMode === 'mobile' ? 'w-[375px] h-[667px]' : 'w-full h-full'}`}
-                style={{ borderTopColor: store.brandColor || '#171717' }}
+                className={`bg-white shadow-xl border border-border-subtle rounded-2xl border-t-8 overflow-hidden transition-all duration-300 ring-1 ring-border-subtle/50 ${previewMode === 'mobile' ? 'w-[375px] h-[667px]' : 'w-full h-full xl:w-[800px]'}`}
+                style={{ borderTopColor: store.primaryColor || '#171717' }}
               >
                    {/* Mock Storefront inside Preview */}
-                  <div className="flex flex-col h-full bg-[#FAFAFA] text-black font-sans relative">
-                     <div className="h-16 flex items-center justify-center p-6 shrink-0 relative mt-4">
-                        {store.logo ? (
-                           <img src={store.logo} alt={store.name} className="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-xl absolute -bottom-8" />
+                  <div className="flex flex-col h-full bg-[#FAFAFA] text-black font-sans relative" style={{ backgroundColor: store.secondaryColor || '#f3f4f6' }}>
+                     <div className="h-16 flex items-center justify-center p-6 shrink-0 relative mt-8">
+                        {store.logoUrl ? (
+                           <img src={store.logoUrl} alt={store.name} className="w-20 h-20 rounded-xl object-cover ring-4 ring-white shadow-xl absolute -bottom-10" />
                         ) : (
-                           <div className="w-16 h-16 rounded-full text-white flex items-center justify-center font-bold text-xl shadow-xl absolute -bottom-8 ring-4 ring-white" style={{ backgroundColor: store.brandColor || '#00C853' }}>
+                           <div className="w-20 h-20 rounded-xl text-white flex items-center justify-center font-bold text-xl shadow-xl absolute -bottom-10 ring-4 ring-white" style={{ backgroundColor: store.primaryColor || '#171717' }}>
                               {store.name ? store.name.charAt(0).toUpperCase() : 'S'}
                            </div>
                         )}
                      </div>
-                     <div className="p-6 pt-12 flex-1 overflow-y-auto">
-                        <div className="max-w-md mx-auto text-center mb-8">
+                     <div className="p-6 pt-16 flex-1 overflow-y-auto">
+                        <div className="max-w-md mx-auto text-center mb-10">
                            <h2 className="font-bold text-2xl tracking-tight text-gray-900 mb-2">{store.name || 'Store Name'}</h2>
                            <p className="text-sm text-gray-600 leading-relaxed max-w-sm mx-auto">{store.bio || 'Store bio will appear here after you add it on the left pane.'}</p>
                         </div>
-                        <div className="flex flex-col gap-3 max-w-md mx-auto">
-                           {(store.selectedProductIds || []).filter(id => products[id]).map(id => {
-                              const p = products[id];
-                              return (
-                                 <div key={id} className="bg-white rounded-[1rem] border border-gray-200 p-2.5 flex items-center gap-3 hover:shadow-md transition-shadow group cursor-pointer active:scale-[0.98]">
-                                     <div className="w-16 h-16 bg-gray-50 rounded-lg overflow-hidden shrink-0">
-                                        {p.thumbnail ? <img src={p.thumbnail} className="w-full h-full object-cover" /> : <div className="w-full h-full flex items-center justify-center bg-gray-100"><Package className="w-5 h-5 text-gray-300" /></div>}
-                                     </div>
-                                     <div className="flex-1 overflow-hidden pr-2">
-                                        <h3 className="font-bold text-[15px] tracking-tight truncate mb-0.5 text-gray-900">{p.title}</h3>
-                                        <p className="text-xs font-semibold text-gray-500">${p.price?.toFixed(2) || '0.00'}</p>
-                                     </div>
-                                 </div>
-                              );
-                           })}
-                           {(!store.selectedProductIds || store.selectedProductIds.length === 0) && (
-                              <div className="border-2 border-dashed border-gray-200 rounded-2xl p-8 flex flex-col items-center justify-center text-gray-400 text-sm font-medium text-center">
-                                 No products selected. Select products from the Digital Products tab.
+                        <div className="flex flex-col gap-4 max-w-xl mx-auto">
+                           {storeProducts.map(p => (
+                               <div key={p.id} className="bg-white rounded-xl shadow-sm border border-black/5 p-3 flex items-center gap-4 hover:shadow-md transition-all cursor-pointer">
+                                   <div className="w-20 h-20 bg-gray-50 rounded-lg overflow-hidden shrink-0">
+                                      {(p.customThumbnailUrl || p.catalogProduct?.thumbnailUrl) ? <img src={p.customThumbnailUrl || p.catalogProduct?.thumbnailUrl} className="w-full h-full object-cover" /> : <div className="w-full h-full flex items-center justify-center bg-gray-100"><Package className="w-5 h-5 text-gray-300" /></div>}
+                                   </div>
+                                   <div className="flex-1 overflow-hidden pr-2">
+                                      <h3 className="font-bold text-lg tracking-tight truncate mb-1 text-gray-900">{p.customTitle || p.catalogProduct?.title || 'Product'}</h3>
+                                      <p className="text-sm font-semibold mb-2" style={{ color: store.primaryColor || '#171717' }}>₹{p.sellingPrice.toFixed(2)}</p>
+                                   </div>
+                               </div>
+                           ))}
+                           {storeProducts.length === 0 && (
+                              <div className="border-2 border-dashed border-black/10 rounded-2xl p-8 flex flex-col items-center justify-center text-black/40 text-sm font-medium text-center bg-white/50">
+                                 No products in your store. Add from the Catalog.
                               </div>
                            )}
                            
-                           <div className="mt-4 w-full h-12 rounded-xl flex items-center justify-center text-white font-bold" style={{ backgroundColor: store.brandColor || '#00C853' }}>
-                              Contact {store.name || 'Store'}
+                           <div className="mt-8 mx-auto w-full max-w-sm h-12 rounded-xl flex items-center justify-center text-white font-bold shadow-md hover:scale-[1.02] transition-transform cursor-pointer" style={{ backgroundColor: store.accentColor || '#3b82f6' }}>
+                               Contact {store.name || 'Store'}
                            </div>
                         </div>
                      </div>
@@ -286,3 +302,4 @@ export default function StoreBuilder() {
     </ErrorBoundary>
   );
 }
+

@@ -36,7 +36,7 @@ export default function UserDashboard() {
            animate={{ y: 0, opacity: 1 }}
            className="text-8xl md:text-[8rem] font-black tracking-tighter text-text-main tabular-nums leading-none mb-6 drop-shadow-sm"
          >
-           $0.00
+           ₹0.00
          </motion.div>
          
          <p className="text-text-muted font-medium text-lg max-w-md mx-auto">
@@ -93,7 +93,7 @@ export default function UserDashboard() {
         <MetricCard 
            delay={0.4}
            title="Available Balance" 
-           value={`$${stats.todayRevenue.toFixed(2)}`} 
+           value={`₹${stats.todayRevenue.toFixed(2)}`} 
            icon={<DollarSign className="w-5 h-5" />} 
            trend="Ready for payout" 
            isPrimary

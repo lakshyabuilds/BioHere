@@ -1,32 +1,36 @@
-# 🎯 Use Cases & Pricing Strategy
+# Use Cases and Pricing
 
-## Target Demographics & Use Cases
+## Pricing Model
 
-### 1. The Faceless Instagram/TikTok Theme Page
-**The Persona:** Someone running a motivational page, luxury lifestyle page, or finance tips page. They have 10k-50k followers but are making zero dollars because sponsorships are hard to get.
-**The Use Case:** They sign up, choose the "Faceless Instagram Reels Bundle" or "ChatGPT Marketer Prompts", and put the 1-Click Storefront link in their bio. Their followers buy out of impulse.
+Pi-Store utilizes a highly accessible, volume-driven pricing strategy:
+*   **The Test Drive:** ₹1 for a 7-day fully unlocked trial.
+*   **The Subscription:** ₹99/month. 
+*   **There is no free tier.**
 
-### 2. The Total Beginner (The "Make Money Online" Seeker)
-**The Persona:** Has no skills, no product, and no audience yet, but is highly motivated by success stories on YouTube.
-**The Use Case:** They use our platform as their absolute starting point. Because the barrier to entry is so low (₹99), it's a very easy risk to take. They get the store first, then figure out the social media traffic later.
+### The 80/20 Profit Split
+Creators select products from the Pi-Store catalog. Every product has a **Base Price**. Creators set their own **Selling Price**.
+*   **Profit Margin** = Selling Price - Base Price
+*   **Creator Cut:** 80% of Profit Margin.
+*   **System Cut:** 20% of Profit Margin (+ Base Price).
 
-### 3. The Busy Professional / Consultant 
-**The Persona:** A marketer, consultant, or freelancer who wants to sell a small template or cheat sheet but refuses to spend a weekend setting up Shopify. 
-**The Use Case:** (Future expansion) They use the platform solely for the "Pi Store Checkout" aesthetic, even if they bring their own product eventually.
+### Payout Requirements
+Payouts are made in the first week of every month via UPI or Bank Transfer. A creator **must** make a minimum of 3 sales in a month to unlock their payout.
 
 ---
 
-## 💰 Pricing Psychology (The "Selling Hope" Strategy)
+## Primary Use Cases
 
-### The ₹99/Month Model
-Pricing at ₹99/month (approx. $1.20 USD) is a deliberate psychological strategy, often referred to as "No Brainer" or "Impulse SaaS" pricing.
+### 1. The Instagram Theme Page Owner
+Rahul runs a popular Instagram page posting luxury lifestyle reels. He has 50k followers but makes no money. 
+*   **Action:** He pays ₹1, sets up a Pi-Store, and adds a "Luxury Lifestyle Guide & Reels Bundle".
+*   **Result:** He puts the link in his bio, makes his first 5 sales in a week, easily clearing the 3-sale minimum and generating pure profit without ever creating a product.
 
-1. **Frictionless Decision:** ₹99 is less than a cup of coffee. The cognitive load required to make a purchasing decision is nearly zero. It bypasses the logical brain ("Do I need this?") and taps directly into the emotional brain ("This might change my life, and it costs nothing").
-2. **Selling Hope:** You are not selling software. You are selling the *hope* of passive income. At ₹99, it is an extremely cheap lottery ticket to financial independence. 
-3. **Volume over Margins:** This strategy relies wholly on volume. You stated you need 7-10 paying customers. At this price point, objections are eliminated. If the product holds even a fraction of its promise, retention is virtually guaranteed because the financial pain of staying subscribed is nonexistent.
+### 2. The TikTok / Reels Side Hustler
+Priya wants to start a side-hustle but has no product. 
+*   **Action:** She subscribes for ₹99/month, picks trending digital templates from the Pi-Store catalog, and creates TikToks promoting them. 
+*   **Result:** She drives targeted traffic, commands high profit margins on her sales, and receives monthly payouts directly to her UPI.
 
-### The Math to Your Goal
-- **Target:** 10 Customers at ₹99/month.
-- **Revenue:** ₹990/month.
-- **Conversion Rate Assumption (Cold Outreach):** If you message 100 targeted accounts with a highly personalized, compelling pitch, securing a 10% conversion rate at a ₹99 price point is highly realistic. 
-- **The Pitch:** "Start your digital empire today. Products included. Store included. ₹99/mo."
+### 3. The Cross-Selling Digital Marketer
+A marketer looking to add upsells to their existing funnel.
+*   **Action:** They spin up a Pi-Store brand with specific niche colors matching their main funnel. 
+*   **Result:** They route traffic to the customized `/s/:slug` page to sell high-margin digital products as congruent back-end offers.

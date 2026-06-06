@@ -1,44 +1,22 @@
-# 🗺️ Product Roadmap & Status
+# Pi-Store Roadmap
 
-## ✅ What's Done (The Core Engine)
+## Phase 1: MVP & Core Operations (Current)
+*   **Authentication & Onboarding:** Secure login with subscription gates (₹1 trial, ₹99/month).
+*   **Admin Tools:** Product Catalog management (CRUD operations for base products).
+*   **Creator Dashboard:** Store builder (branding options) and Catalog integration.
+*   **Public Storefronts:** Dynamic generation of consumer-facing stores (`/s/:slug`).
+*   **Accounting Logic:** Gamified wallet with 80/20 profit splitting engine and progress trackers (3 sales requirement).
 
-### Foundation & Auth
-- [x] Initial React + Vite scaffolding.
-- [x] Firebase authentication integration (Google Sign-In).
-- [x] Minimalist, premium UI foundation (Tailwind CSS configuration).
-- [x] Real-time User Profile synchronization with Firestore.
+## Phase 2: Payment Gateway Full Integration (Next 30 Days)
+*   Integrate official **Stripe & Razorpay** checkout sessions for real-time payment captures.
+*   Automate the delivery UI to generate expiring, signed download links for buyers post-purchase to prevent link sharing.
+*   Webhook listeners to automatically record `orders` in Firestore upon successful payment.
 
-### Admin Systems
-- [x] Secure Admin Dashboard.
-- [x] Global Product Management (Create, Read, Update, Delete).
-- [x] 1-Click Demo Seed (Instantly populates the system with high-quality demo PLR products).
+## Phase 3: Analytics & Conversion Tools (Days 30-90)
+*   **Advanced Analytics:** Views, conversion rates, and cart abandonment stats in the Creator Dashboard.
+*   **Discount Code Engine:** Allow creators to generate their own promo codes (cutting entirely into their own margins, protecting the base price).
+*   **Pixel Tracking:** Allow creators to attach Meta and TikTok pixels to their storefronts for advanced retargeting.
 
-### User Experience (Creator Side)
-- [x] Protected route layout.
-- [x] Enforced Onboarding (Users must set up a store before proceeding).
-- [x] Store Builder (Configure slug, branding, bio).
-- [x] Curated Catalog UI (Browse global products and add them to personal store).
-
-### The Public Storefront
-- [x] Dynamic wildcard routing (`/s/:slug`).
-- [x] Mobile-first, highly aesthetic display of the creator's brand.
-- [x] Optimized "Pi Store" checkout interface (currently simulated).
-- [x] Fast lead capturing (Email collection form).
-
----
-
-## 🚧 What's Not Done (Next Steps)
-
-### Phase 1: Commercialization (0 to 1)
-- [ ] **Real Payments Integration:** Connect Stripe Connect to allow real transactions and split processing (platform fees).
-- [ ] **SaaS Billing:** Implement Stripe Subscriptions to charge the creators ₹99/month for access to the platform.
-- [ ] **Digital Delivery System:** Implement automated email dispatch or secure download links for the digital products post-purchase.
-
-### Phase 2: Growth Features
-- [ ] **Custom Domains:** Allow users to connect `theirname.com` instead of using the `/s/slug` path.
-- [ ] **Analytics Dashboard:** Show creators page views, conversion rates, and revenue graphs.
-- [ ] **Lead Export:** Allow creators to export their captured buyer emails to CSV or integrate with Mailchimp/ConvertKit.
-
-### Phase 3: Expansion
-- [ ] **AI Description Generator:** Allow creators to rewrite the PLR product descriptions using AI to make them unique for SEO.
-- [ ] **Affiliate Network:** Allow creators to recruit other users to sell their products for a cut.
+## Phase 4: Platform Scale & Autonomous Payouts (Month 3-6)
+*   **Automated Payouts:** Direct integration with Stripe Connect or Razorpay Route for automated 1st-of-month fund distribution to creators.
+*   **Expanded Catalog:** Partnering with top-tier digital creators to syndicate their products into the Pi-Store base catalog.

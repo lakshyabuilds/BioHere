@@ -65,7 +65,7 @@ export default function PublicLanding() {
              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1 }}
              className="text-sm font-bold text-text-muted mt-4"
           >
-             Keep 100% of your profits. Cancel anytime.
+             Keep 80% of your profit margins. Cancel anytime.
           </motion.p>
         </div>
       </section>
@@ -127,7 +127,7 @@ export default function PublicLanding() {
                   {[
                     "Highly demanded digital products.",
                     "No inventory or shipping required.",
-                    "Keep 100% of the revenue you make."
+                    "You set the price, keep 80% of the profit margin."
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-text-main font-bold">
                        <CheckCircle2 className="w-6 h-6 text-primary shrink-0" /> {item}

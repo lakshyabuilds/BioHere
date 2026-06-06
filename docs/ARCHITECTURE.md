@@ -1,43 +1,29 @@
-# ⚙️ Technical Architecture & Developer Notes
+# Architecture Overview
 
-## High-Level Architecture
-This platform is built as a highly responsive, modern Single Page Application (SPA) utilizing a managed Backend-as-a-Service (BaaS) architecture for speed, scalability, and zero-maintenance operations.
+Pi-Store is built on a modern, serverless architecture using **Vite + React (TypeScript)** on the frontend and **Firebase** (Firestore and Authentication) for the backend. 
 
-### Frontend Stack
-- **Framework:** React 18
-- **Build Tool:** Vite
-- **Language:** TypeScript (Strict Mode)
-- **Routing:** React Router v6
-- **Styling:** Tailwind CSS (Utility-first, highly customized design system)
-- **Icons:** Lucide React
-- **Animations:** Framer Motion (used for liquid-smooth transitions and micro-interactions)
+## 1. Core Modules
 
-### Backend & Infrastructure
-- **Database:** Firebase Firestore (NoSQL, realtime capabilities)
-- **Authentication:** Firebase Auth (Google OAuth + Email/Password infrastructure)
-- **Hosting Target:** Vercel (or Google Cloud Run)
+### A. The Admin Subsystem
+*   **Global Catalog Management:** The platform owner uploads premium digital products, including a secure `fileUrl` and a `basePrice` (minimum margin).
+*   **Order & Payout Management:** Admins view all sales, track creator performance, and process monthly payouts to users who meet the 3-sale threshold.
 
-## Core Modules
+### B. The Creator Dashboard (SaaS App)
+*   **Store Builder:** Creators personalize their storefront UI with logos, primary/secondary/accent colors, and bio. 
+*   **Library/Catalog:** Creators browse the admin catalog and import products to their own stores defining a custom selling price (which must exceed the base price). 
+*   **Wallet & Progress:** A gamified tracker shows earnings, payout progress (3 sales required per month), and allows creators to save UPI/Bank details.
 
-### 1. `AuthContext` (State Management)
-- Manages global user state in real-time using Firestore `onSnapshot`.
-- Handles automatic profile creation upon first Google OAuth login.
-- Injects a hardcoded master admin role (`lakshya.automate@gmail.com`) for foundational control.
+### C. The Public Storefronts
+*   **Dynamic Generation:** Consumer-facing stores are generated dynamically at `pi-store.com/s/:slug`.
+*   **Secure Fulfillment:** Once a buyer purchases an item, they are shown a secure post-purchase screen with the direct download link. Download assets are never exposed directly inside the Creator Dashboard to prevent unauthorized redistribution.
 
-### 2. Admin Panel (`/admin/*`)
-- **Global Inventory Management:** The master switchboard. Admins upload base products (PLR vault) here.
-- **Data Model:** Products have metadata (thumbnails, descriptions, pricing).
+## 2. Database Schema (Firestore)
 
-### 3. User Dashboard (`/app/*`)
-- **Store Builder:** Allows users to define branding (slug, name, bio, logo).
-- **Catalog Selector:** The marketplace where users "claim" global products to be displayed on their personal storefront.
-- **Onboarding Flow:** Forced redirect logic ensures a user must configure their store before browsing the catalog.
+*   `users`: Stores user profile data and subscription status (`active`, `trialing`).
+*   `products` (Catalog): The admin master list of products.
+*   `stores`: Creator storefront configurations (colors, logos, slugs).
+*   `storeProducts`: The pivot table connecting a `storeId` with a `catalogProductId`. Stores custom creator pricing and optional text overrides.
+*   `orders`: Records all purchases, splitting accounting between `basePrice`, `creatorProfit` (80% of margin), and `adminProfit` (20% of margin + basePrice).
 
-### 4. Public Storefront (`/s/:slug`)
-- **Dynamic Routing:** Resolves the store data based on the URL parameter (`slug`).
-- **Data Hydration:** Fetches the store document, then fetches the specific products the user has selected.
-- **Conversion UI:** Implements the "Pi Store" checkout modal—a carefully designed bottom-sheet/modal intended for mobile-first impulse purchasing.
-
-## Security Considerations
-- **Firestore Security Rules:** (Must be deployed) to ensure users can only modify their own `users` document and admin operations are restricted.
-- **OAuth Scopes:** We intentionally minimized Google OAuth scopes to standard `email` and `profile` to avoid the "App not verified" friction during onboarding. Sensitive scopes (Drive, Gmail) have been stripped.
+## 3. Deployment
+The application is designed to be hosted seamlessly on platforms like Cloud Run, Vercel, or Firebase Hosting. Environment variables dictate the Stripe and Firebase connections.

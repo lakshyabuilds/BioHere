@@ -46,6 +46,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             };
             
             await setDoc(doc(db, 'users', user.uid), newUser);
+          } else {
+            // Auto-upgrade existing user to admin if email matches
+            if (user.email === 'lakshya.automate@gmail.com' && userDoc.data().role !== 'admin') {
+              await setDoc(doc(db, 'users', user.uid), { role: 'admin' }, { merge: true });
+            }
           }
           
           // Now subscribe to real-time updates
