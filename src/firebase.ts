@@ -1,10 +1,19 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-import firebaseConfig from '../firebase-applet-config.json';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC2evYs-g83dTZdbGjsgoKleDQmRV4RdmU",
+  authDomain: "pi-store-c0f97.firebaseapp.com",
+  projectId: "pi-store-c0f97",
+  storageBucket: "pi-store-c0f97.firebasestorage.app",
+  messagingSenderId: "535526924822",
+  appId: "1:535526924822:web:c56728a6ffccf02f1e0b37",
+  measurementId: "G-QGZNPKETW0"
+};
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 

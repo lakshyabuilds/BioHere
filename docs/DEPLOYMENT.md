@@ -40,7 +40,7 @@ Expand the **Environment Variables** section and add the following keys and valu
 
 ### Step 5: Deploy
 1. Click the **Deploy** button.
-2. Vercel will install dependencies, run the build command, and assign a free sub-domain (e.g., `your-app-name.vercel.app`).
+2. Vercel will install dependencies, run the build command, and assign a free sub-domain (e.g., `getpistore.vercel.app`).
 3. Within 1-2 minutes, your app will be live globally on their edge network.
 
 ## Post-Deployment Checklist
@@ -49,7 +49,7 @@ Expand the **Environment Variables** section and add the following keys and valu
 Since your app is now running on a new Vercel domain, Google Sign-In will fail unless you whitelist the domain.
 1. Go to the Firebase Console -> **Authentication** -> **Settings**.
 2. Go to **Authorized domains**.
-3. Add your new Vercel URL (e.g., `your-app.vercel.app`).
+3. Add your new Vercel URL (e.g., `getpistore.vercel.app`).
 
 ### 2. Client-Side Routing Fix (If necessary)
 Because this is a Single Page Application (SPA), if users navigate directly to a sub-page (like `/s/store-name`) and refresh, they might hit a 404. 

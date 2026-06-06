@@ -22,7 +22,7 @@
 ### The Public Storefront
 - [x] Dynamic wildcard routing (`/s/:slug`).
 - [x] Mobile-first, highly aesthetic display of the creator's brand.
-- [x] Optimized "Blink" checkout interface (currently simulated).
+- [x] Optimized "Pi Store" checkout interface (currently simulated).
 - [x] Fast lead capturing (Email collection form).
 
 ---

@@ -17,7 +17,7 @@ Our software is not just a tool; it is a **confidence engine**. We are in the bu
 - **Zero Tolerance for Friction:** If the checkout takes more than 30 seconds or requires creating an account, they bounce.
 
 **How we address this:**
-1. **The "Blink" Checkout:** Single-page. No account creation. Email + Payment. High contrast, large touch targets, premium trust signals (security badges, minimalist UI). 
+1. **The "Pi Store" Checkout:** Single-page. No account creation. Email + Payment. High contrast, large touch targets, premium trust signals (security badges, minimalist UI). 
 2. **Perceived Value:** By generating storefronts with premium typography, deep shadows, and stark contrasts, we elevate the perceived value of a simple PDF or Notion template.
 
 ## The Long-Term Vision

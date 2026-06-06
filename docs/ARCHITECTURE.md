@@ -36,7 +36,7 @@ This platform is built as a highly responsive, modern Single Page Application (S
 ### 4. Public Storefront (`/s/:slug`)
 - **Dynamic Routing:** Resolves the store data based on the URL parameter (`slug`).
 - **Data Hydration:** Fetches the store document, then fetches the specific products the user has selected.
-- **Conversion UI:** Implements the "Blink" checkout modal—a carefully designed bottom-sheet/modal intended for mobile-first impulse purchasing.
+- **Conversion UI:** Implements the "Pi Store" checkout modal—a carefully designed bottom-sheet/modal intended for mobile-first impulse purchasing.
 
 ## Security Considerations
 - **Firestore Security Rules:** (Must be deployed) to ensure users can only modify their own `users` document and admin operations are restricted.

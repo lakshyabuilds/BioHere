@@ -12,7 +12,7 @@
 
 ### 3. The Busy Professional / Consultant 
 **The Persona:** A marketer, consultant, or freelancer who wants to sell a small template or cheat sheet but refuses to spend a weekend setting up Shopify. 
-**The Use Case:** (Future expansion) They use the platform solely for the "Blink Checkout" aesthetic, even if they bring their own product eventually.
+**The Use Case:** (Future expansion) They use the platform solely for the "Pi Store Checkout" aesthetic, even if they bring their own product eventually.
 
 ---
 

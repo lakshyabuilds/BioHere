@@ -1,4 +1,4 @@
-# 🚀 Project "Blink" Pitch Deck: The 1-Click Digital Empire
+# 🚀 Project "Pi Store" Pitch Deck: The 1-Click Digital Empire
 
 ## The Problem
 The creator economy is booming, but the friction to entry is massive. Most aspiring creators want to monetize an audience but face three insurmountable hurdles:
@@ -12,7 +12,7 @@ The creator economy is booming, but the friction to entry is massive. Most aspir
 We empower anyone to become a digital merchant in under 60 seconds.
 1. **Curated Vault:** We provide high-converting, Done-For-You (PLR) products (e.g., "Faceless Reels Bundle", "Notion Templates", "ChatGPT Prompts").
 2. **1-Click Infrastructure:** The user picks a product, and we instantly generate a gorgeous, high-converting public storefront.
-3. **Frictionless Checkout:** A highly optimized "Blink" checkout designed to capture impulse purchases.
+3. **Frictionless Checkout:** A highly optimized "Pi Store" checkout designed to capture impulse purchases.
 
 ## Market Size & Opportunity
 - **Creator Economy:** Valued at over $250 Billion globally, growing at an unprecedented rate.
