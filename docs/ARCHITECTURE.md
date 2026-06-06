@@ -1,6 +1,6 @@
 # Architecture Overview
 
-Pi-Store is built on a modern, serverless architecture using **Vite + React (TypeScript)** on the frontend and **Firebase** (Firestore and Authentication) for the backend. 
+BioHere is built on a modern, serverless architecture using **Vite + React (TypeScript)** on the frontend and **Firebase** (Firestore and Authentication) for the backend. 
 
 ## 1. Core Modules
 

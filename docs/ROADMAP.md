@@ -1,4 +1,4 @@
-# Pi-Store Roadmap
+# BioHere Roadmap
 
 ## Phase 1: MVP & Core Operations (Current)
 *   **Authentication & Onboarding:** Secure login with subscription gates (₹1 trial, ₹99/month).
@@ -19,4 +19,4 @@
 
 ## Phase 4: Platform Scale & Autonomous Payouts (Month 3-6)
 *   **Automated Payouts:** Direct integration with Stripe Connect or Razorpay Route for automated 1st-of-month fund distribution to creators.
-*   **Expanded Catalog:** Partnering with top-tier digital creators to syndicate their products into the Pi-Store base catalog.
+*   **Expanded Catalog:** Partnering with top-tier digital creators to syndicate their products into the BioHere base catalog.

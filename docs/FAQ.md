@@ -3,14 +3,14 @@
 ## For Creators & Sellers
 
 **Q: Do I need my own digital products to start?**
-A: No! Pi-Store provides a plug-and-play catalog of high-demand digital products (reels bundles, ebooks, templates). You simply add them to your store and set your own prices.
+A: No! BioHere provides a plug-and-play catalog of high-demand digital products (reels bundles, ebooks, templates). You simply add them to your store and set your own prices.
 
 **Q: How much does it cost?**
-A: Pi-Store costs ₹99/month. You can take a 7-day test drive of the entire platform for just ₹1. (Note: We do not offer free trials).
+A: BioHere costs ₹99/month. You can take a 7-day test drive of the entire platform for just ₹1. (Note: We do not offer free trials).
 
 **Q: How does the profit split work?**
-A: You pay the "base price" for an item only when a sale is made. Any amount you charge *above* the base price is your profit margin. You keep **80%** of that margin, and Pi-Store retains 20%. 
-*Example: Base price is ₹100. You sell it for ₹500. Margin is ₹400. You keep ₹320. Pi-Store keeps ₹80 (+ the ₹100 base).*
+A: You pay the "base price" for an item only when a sale is made. Any amount you charge *above* the base price is your profit margin. You keep **80%** of that margin, and BioHere retains 20%. 
+*Example: Base price is ₹100. You sell it for ₹500. Margin is ₹400. You keep ₹320. BioHere keeps ₹80 (+ the ₹100 base).*
 
 **Q: When do I get paid?**
 A: Payouts are dispatched in the first week of every month via your selected method (UPI or Bank Transfer), provided you meet the minimum requirement of making at least 3 sales in the preceding month.

@@ -1,6 +1,6 @@
-# Pi-Store 
+# BioHere 
 
-Pi-Store is the ultimate white-label digital product platform designed for creators, theme page owners, and side-hustlers. Launch your own branded store in seconds, select premium digital products (ebooks, reels bundles, templates) from our catalog, and start selling—no technical skills or inventory required.
+BioHere is the ultimate white-label digital product platform designed for creators, theme page owners, and side-hustlers. Launch your own branded store in seconds, select premium digital products (ebooks, reels bundles, templates) from our catalog, and start selling—no technical skills or inventory required.
 
 ## 🚀 Key Features
 

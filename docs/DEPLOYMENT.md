@@ -1,6 +1,6 @@
 # Deployment Guide
 
-This document outlines the steps to deploy Pi-Store into a production environment.
+This document outlines the steps to deploy BioHere into a production environment.
 
 ## 1. Prerequisites
 
@@ -49,4 +49,4 @@ Currently, the system is designed to allow the Admin (Platform Owner) to collect
 ## 5. Post-Deploy Validation
 *   Verify the ₹1 7-day trial flow is operational.
 *   Configure a dummy store to ensure custom colors (Primary, Secondary, Accent) render correctly on the `/s/:slug` route.
-*   Verify JSON-LD and SEO tags correctly inject the Pi-Store metadata.
+*   Verify JSON-LD and SEO tags correctly inject the BioHere metadata.

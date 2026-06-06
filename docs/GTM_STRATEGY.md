@@ -13,7 +13,7 @@
 ### A. Organic Social Media
 *   **Instagram Reels / TikTok:** Showcasing the "Zero to Hero" journey. E.g., *"How I started a digital product business in 60 seconds with ₹1."*
 *   **Twitter/X (Build in Public):** Document the MRR journey, payout transparency, and feature drops to attract the 'Make Money Online' (MMO) tech community.
-*   **YouTube:** Long-form tutorials on *"How to monetize an Instagram theme page"* featuring Pi-Store as the primary tool.
+*   **YouTube:** Long-form tutorials on *"How to monetize an Instagram theme page"* featuring BioHere as the primary tool.
 
 ### B. Paid Acquisition
 *   Meta Ads targeting users interested in "Side Hustles", "Shopify", "Gumroad", and "Make Money Online".
