@@ -23,25 +23,22 @@ export default function Terms() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">2. Creator Storefronts</h2>
+          <h2 className="text-2xl font-bold mb-4">2. The BioHere Catalog and Storefronts</h2>
           <p>
-            BioHere provides a link-in-bio and digital storefront creation
-            service. You retain full ownership of the digital products you
-            upload and sell through our platform. We expect all creators to
-            possess the legal right to sell the content they upload. Piracy,
+            BioHere provides a white-label digital storefront creation service
+            equipped with a pre-vetted curated catalog of Private Label Rights (PLR)
+            products. You are granted a non-exclusive license to re-sell the digital
+            products you import from our catalog. You may also upload your own digital
+            products, provided you possess the legal right to sell them. Piracy,
             copyright infringement, or selling restricted materials will result
             in immediate account termination.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">3. Fees and Payouts</h2>
+          <h2 className="text-2xl font-bold mb-4">3. Fees, Pricing, and Payouts</h2>
           <p>
-            Our pricing is transparent and outlined on our Pricing page. We
-            process payments securely through third-party gateways (such as
-            Stripe). Payouts are subjected to the processing times of these
-            respective gateways. We ensure that you keep your agreed-upon margin
-            for all sales.
+            You are required to maintain an active subscription (₹99/month, after the 7-day ₹1 trial) to access the platform. When selling items from the catalog, you pay a "Base Price" (our cut + processing fees) only when a sale is made. You retain 80% of the profit margin above this base price, and BioHere retains 20%. Payouts are made in the first week of each month to your designated payment method (UPI, NEFT, RTGS, Bank Transfer), provided you meet the minimum sales threshold.
           </p>
         </section>
 
