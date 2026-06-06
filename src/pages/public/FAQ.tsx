@@ -12,25 +12,25 @@ const JsonLd = ({ data }: { data: any }) => (
 export default function FAQ() {
   const faqs = [
     {
-      q: "What types of products can I sell?",
-      a: "You can sell any digital product that you own the rights to. This includes your custom Notion templates, ebooks, coaching guides, digital art, preset packs, and video courses.",
+      q: "Where do these digital products come from?",
+      a: "We provide a curated catalog of high-quality Private Label Rights (PLR) ebooks, templates, and courses. These are products we have already tested in the market to ensure they actually sell. Once you add them to your store, you can sell them as your own and keep 100% of the profits."
     },
     {
       q: "Do I need to know how to code or design?",
-      a: "Absolutely not. BioHere is designed to be the simplest link-in-bio tool on the internet. You can personalize your colors, upload your own icon, and launch a stunning profile in under a minute without writing a single line of code.",
+      a: "Absolutely not. Our 1-Click Launch system generates a mobile-optimized, high-converting storefront for you instantly. Just click a button, and your store is live."
     },
     {
       q: "How do I get paid?",
-      a: "We collect the payments from your customers on your behalf via trusted payment gateways like Stripe. Payouts are made directly to your bank account.",
+      a: "We collect the payments from your customers on your behalf to save you the headache of setting up complex merchant accounts. We then pay you out directly to your bank account or Stripe."
     },
     {
       q: "What is the catch with the ₹1 Trial?",
-      a: "No catch. We want you to experience how easy it is to set up your link-in-bio and make your first sale without risking your own money upfront. It's ₹1 for 7 days, and then ₹99/month. Cancel anytime.",
+      a: "No catch. We want you to experience the dopamine hit of making your first sale without risking your own money upfront. It's ₹1 for 7 days, and then ₹99/month if you decide to keep your store. Cancel anytime."
     },
     {
-      q: "How is BioHere different from Linktree?",
-      a: "Standard link-in-bios just redirect your followers elsewhere, often losing conversions in the process. BioHere has a full checkout system embedded inside your profile, allowing fans to buy your digital products directly on your link page securely.",
-    },
+      q: "Can I use BioHere if I already have my own products?",
+      a: "Yes! While we provide a catalog of done-for-you products, you can easily upload and sell your own digital products, courses, or coaching calls alongside them."
+    }
   ];
 
   return (

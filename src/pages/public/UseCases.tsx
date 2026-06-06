@@ -1,5 +1,5 @@
 import React from "react";
-import { Camera, Paintbrush, BookOpen, Sparkles } from "lucide-react";
+import { Camera, Zap, Smartphone, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 
@@ -11,29 +11,29 @@ export default function UseCases() {
       subtitle: "You have an audience, but aren't monetizing properly.",
       points: [
         "Stop relying on unpredictable ad revenue or sponsorships.",
-        "Link everything you care about in one beautiful place.",
-        "Sell digital products straight from your link-in-bio.",
+        "Launch your brand with our done-for-you digital products.",
+        "Link your BioHere in your bio and turn views into real cash.",
       ],
       color: "border-primary/50 bg-primary/5",
     },
     {
-      icon: <Paintbrush className="w-8 h-8 text-accent" />,
-      title: "Artists & Designers",
-      subtitle: "You create beautiful assets that are hard to sell.",
+      icon: <Zap className="w-8 h-8 text-accent" />,
+      title: "The Side Hustler",
+      subtitle: "You want a passive online income but have no skills yet.",
       points: [
-        "Create a stunning storefront that matches your personal aesthetic.",
-        "Sell digital brushes, notion templates, and icon packs.",
-        "Securely distribute your hard work to genuine fans.",
+        "You don't need to know how to code, design, or write.",
+        "We provide the storefront AND the market-tested products.",
+        "Just copy the link, promote it on social media, and get paid.",
       ],
       color: "border-accent/50 bg-accent/5",
     },
     {
-      icon: <BookOpen className="w-8 h-8 text-alert" />,
-      title: "Educators & Coaches",
-      subtitle: "You teach online but your tools are scattered.",
+      icon: <Smartphone className="w-8 h-8 text-alert" />,
+      title: "Theme Page Owners",
+      subtitle: "You run faceless pages on TikTok or Instagram.",
       points: [
-        "Host your courses, ebooks, and worksheets securely.",
-        "Give your students one cohesive link to find all your materials.",
+        "Monetize faceless audiences instantly with our PLR bundles.",
+        "No customer support headaches, we handle product delivery.",
         "1-click checkout engineered perfectly for mobile traffic.",
       ],
       color: "border-alert/50 bg-alert/5",
@@ -47,8 +47,7 @@ export default function UseCases() {
           Who is this for?
         </h1>
         <p className="text-xl text-text-muted font-medium mb-12 leading-relaxed">
-          BioHere is built for authentic creators who want to own their audience
-          and monetize their digital presence seamlessly.
+          BioHere is built for people who want to make money online, without taking on the headaches of traditional business.
         </p>
       </div>
 
