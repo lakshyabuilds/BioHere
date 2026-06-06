@@ -8,12 +8,65 @@
     <meta name="keywords" content="digital products, creator economy, sell ebooks, sell templates, white label store, Pi-Store, make money online" />
     <meta name="author" content="Pi-Store" />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://getpistore.vercel.app" id="canonical-url" />
     
+    <script>
+      (function() {
+        var path = window.location.pathname;
+        var baseUrl = 'https://getpistore.vercel.app';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+          var canonical = document.getElementById('canonical-url');
+          var ogUrl = document.querySelector('meta[property="og:url"]');
+          
+          if (canonical) canonical.href = baseUrl + (path === '/' ? '' : path);
+          if (ogUrl) ogUrl.content = baseUrl + (path === '/' ? '' : path);
+
+          if (path.startsWith('/s/')) {
+            var splitted = path.split('/');
+            var storeSlug = splitted[2];
+            var productNameSlug = splitted[4]; // e.g. /s/store-slug/p/product-slug
+            
+            if (storeSlug) {
+              var storeName = storeSlug.split('-').map(function(word) {
+                return word.charAt(0).toUpperCase() + word.slice(1);
+              }).join(' ');
+
+              var title = document.querySelector('title');
+              var metaDesc = document.querySelector('meta[name="description"]');
+              var ogTitle = document.querySelector('meta[property="og:title"]');
+              var ogDesc = document.querySelector('meta[property="og:description"]');
+              var twTitle = document.querySelector('meta[name="twitter:title"]');
+              var twDesc = document.querySelector('meta[name="twitter:description"]');
+
+              var dynamicTitle = storeName + " | Premium Digital Products";
+              var dynamicDesc = "Welcome to " + storeName + "'s digital storefront. Discover and purchase premium digital products, ebooks, and templates instantly.";
+
+              if (productNameSlug) {
+                var productName = productNameSlug.split('-').map(function(word) {
+                  return word.charAt(0).toUpperCase() + word.slice(1);
+                }).join(' ');
+                dynamicTitle = productName + " | " + storeName;
+                dynamicDesc = "Get access to " + productName + " by " + storeName + ". Instantly download this premium digital product.";
+              }
+
+              if (title) title.textContent = dynamicTitle;
+              if (metaDesc) metaDesc.content = dynamicDesc;
+              if (ogTitle) ogTitle.content = dynamicTitle;
+              if (ogDesc) ogDesc.content = dynamicDesc;
+              if (twTitle) twTitle.content = dynamicTitle;
+              if (twDesc) twDesc.content = dynamicDesc;
+            }
+          }
+        });
+      })();
+    </script>
+
     <!-- Open Graph/Social Preview -->
     <meta property="og:title" content="Pi-Store | The Easiest Digital Store Builder">
     <meta property="og:description" content="Launch your own branded digital storefront. Access a premium catalog, set your own prices, and keep 80% of your profit margin. Start your 7-day trial for just ₹1.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pi-store.com">
+    <meta property="og:url" content="https://getpistore.vercel.app">
     <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/4e/Pi-symbol.svg">
     <meta property="og:site_name" content="Pi-Store">
 

@@ -6,4 +6,4 @@ Disallow: /admin/
 Disallow: /login
 Disallow: /signup
 
-Sitemap: https://pi-store.com/sitemap.xml
+Sitemap: https://getpistore.vercel.app/sitemap.xml

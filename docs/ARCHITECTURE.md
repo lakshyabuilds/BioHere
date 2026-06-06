@@ -14,7 +14,7 @@ Pi-Store is built on a modern, serverless architecture using **Vite + React (Typ
 *   **Wallet & Progress:** A gamified tracker shows earnings, payout progress (3 sales required per month), and allows creators to save UPI/Bank details.
 
 ### C. The Public Storefronts
-*   **Dynamic Generation:** Consumer-facing stores are generated dynamically at `pi-store.com/s/:slug`.
+*   **Dynamic Generation:** Consumer-facing stores are generated dynamically at `getpistore.vercel.app/s/:slug`.
 *   **Secure Fulfillment:** Once a buyer purchases an item, they are shown a secure post-purchase screen with the direct download link. Download assets are never exposed directly inside the Creator Dashboard to prevent unauthorized redistribution.
 
 ## 2. Database Schema (Firestore)
