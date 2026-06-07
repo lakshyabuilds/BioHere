@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import { logout } from '../firebase';
 import { doc, getDoc } from 'firebase/firestore';
@@ -12,6 +12,18 @@ export default function UserLayout() {
   const location = useLocation();
   const { userProfile } = useAuth();
   const [storeSlug, setStoreSlug] = useState<string | null>(null);
+  const [showProfile, setShowProfile] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setShowProfile(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const loadSlug = async () => {
@@ -114,10 +126,35 @@ export default function UserLayout() {
             {navItems.find(i => i.path === location.pathname)?.name || 'Dashboard'}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4" ref={navRef}>
             <ThemeToggle />
-            <div className="w-8 h-8 rounded-full bg-bg-surface border border-border-subtle flex items-center justify-center font-bold text-text-main text-xs uppercase cursor-pointer hover:bg-bg-hover transition-all">
-              {userProfile?.name ? userProfile.name.charAt(0) : 'U'}
+            
+            {/* Profile Dropdown */}
+            <div className="relative">
+              <button 
+                onClick={() => setShowProfile(!showProfile)}
+                className="h-8 w-8 rounded-full bg-bg-surface border border-border-subtle flex items-center justify-center font-bold text-text-main text-xs uppercase cursor-pointer hover:bg-bg-hover transition-all"
+              >
+                {userProfile?.name ? userProfile.name.charAt(0) : 'U'}
+              </button>
+
+              {showProfile && (
+                <div className="absolute right-0 mt-2 w-56 p-0 z-50 animate-in fade-in slide-in-from-top-2 bg-bg-card border border-border-subtle rounded-xl shadow-lg">
+                  <div className="p-4 border-b border-border-subtle">
+                    <p className="text-sm font-semibold text-text-main truncate">{userProfile?.name || 'User Account'}</p>
+                    <p className="text-xs font-medium text-text-muted truncate mt-0.5">{userProfile?.email || 'user session'}</p>
+                  </div>
+                  <div className="p-2">
+                    <button 
+                      onClick={handleLogout}
+                      className="w-full flex items-center px-3 py-2 text-sm font-medium rounded-lg hover:bg-bg-hover text-text-main transition-colors group"
+                    >
+                      <LogOut className="w-4 h-4 mr-2" />
+                      Logout
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </header>

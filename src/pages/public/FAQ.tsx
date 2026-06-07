@@ -13,7 +13,7 @@ export default function FAQ() {
   const faqs = [
     {
       q: "Where do these digital products come from?",
-      a: "We provide a curated catalog of high-quality Private Label Rights (PLR) ebooks, templates, and courses. These are products we have already tested in the market to ensure they actually sell. Once you add them to your store, you can sell them as your own and keep 100% of the profits."
+      a: "Every product inside BioHere originates from the founder's own portfolio of digital products, templates, creator resources, and operating systems that have been sold independently over the last 4 years. We offer them to you internally for resale to your audience."
     },
     {
       q: "Do I need to know how to code or design?",
@@ -21,15 +21,15 @@ export default function FAQ() {
     },
     {
       q: "How do I get paid?",
-      a: "We collect the payments from your customers on your behalf to save you the headache of setting up complex merchant accounts. We then pay you out directly to your bank account or Stripe."
+      a: "We collect the payments securely. We manage the fulfillment and pay you out directly to your bank account via UPI, NEFT, RTGS, or Bank Transfer. You retain 80% of the margin you set above the base processing price."
     },
     {
       q: "What is the catch with the ₹1 Trial?",
-      a: "No catch. We want you to experience the dopamine hit of making your first sale without risking your own money upfront. It's ₹1 for 7 days, and then ₹99/month if you decide to keep your store. Cancel anytime."
+      a: "The ₹1 charge is used to verify payment methods and prevent spam accounts, bot signups, and fake store creation. The platform costs ₹99/month after the 7-day trial period. Billing terms are transparently shown before payment."
     },
     {
       q: "Can I use BioHere if I already have my own products?",
-      a: "Yes! While we provide a catalog of done-for-you products, you can easily upload and sell your own digital products, courses, or coaching calls alongside them."
+      a: "Yes! While we provide the curated catalog, you can just as easily upload and sell your own digital products safely alongside them."
     }
   ];
 

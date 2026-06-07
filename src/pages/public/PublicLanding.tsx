@@ -32,7 +32,7 @@ export default function PublicLanding() {
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web",
           description:
-            "Launch a high-converting digital product storefront pre-loaded with market-tested products.",
+            "Access a library of creator-tested digital assets built and sold by Lakshya Gupta over the last 4 years.",
         }}
       />
 
@@ -49,7 +49,7 @@ export default function PublicLanding() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-alert/10 border border-alert/20 text-alert text-xs font-black tracking-widest uppercase shadow-[0_0_15px_rgba(255,51,102,0.15)]"
           >
             <span className="flex w-2 h-2 rounded-full bg-alert animate-pulse"></span>
-            Stop Wasting Time on Product Research
+            Creator Commerce Infrastructure
           </motion.div>
 
           <motion.h1
@@ -58,7 +58,7 @@ export default function PublicLanding() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="heading-display text-5xl md:text-7xl lg:text-8xl text-text-main tracking-tight leading-[1.05]"
           >
-            Start Selling <span className="text-primary italic">Proven Digital Products</span> In 60 Seconds.
+            Monetize Your Audience With <span className="text-primary italic">Creator Assets.</span>
           </motion.h1>
 
           <motion.p
@@ -67,9 +67,7 @@ export default function PublicLanding() {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="text-xl md:text-2xl text-text-muted max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            No skills. No inventory. No coding. We give you a 1-click storefront
-            pre-loaded with market-tested digital products (ebooks, templates,
-            bundles) that are already making millions online.
+            Access a library of proven digital products developed, tested, and sold by Lakshya Gupta over the past 4 years. Launch your branded storefront in 60 seconds without handling fulfillment or technical infrastructure.
           </motion.p>
 
           <motion.div
@@ -91,7 +89,7 @@ export default function PublicLanding() {
             transition={{ duration: 1, delay: 1 }}
             className="text-sm font-bold text-text-muted mt-4"
           >
-            Keep 80% of your profit margins. Cancel anytime.
+            Maintain 80% profit margins. No lock-in.
           </motion.p>
         </div>
       </section>
@@ -101,45 +99,40 @@ export default function PublicLanding() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-16 text-center">
             <h2 className="heading-display text-4xl md:text-5xl text-text-main mb-6">
-              Why 99% of creators fail to monetize...
+              The BioHere Difference
             </h2>
             <p className="text-text-muted text-xl max-w-2xl mx-auto font-medium">
-              You've been told to "just use Shopify" or "put a Gumroad link in
-              your bio". Here is why that doesn't work for you:
+              We provide the tools and the catalog so you focus on what you do
+              best: creating content and building an audience.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="neo-card p-8 flex flex-col gap-4 border-error/20 bg-bg-card opacity-80">
-              <div className="text-error font-black text-xl mb-2 flex items-center gap-2">
-                1. The Shopify Trap
+            <div className="neo-card p-8 flex flex-col gap-4 border-border-subtle bg-bg-card opacity-80">
+              <div className="text-text-main font-black text-xl mb-2 flex items-center gap-2">
+                1. Shopify / Standard eCommerce
               </div>
               <p className="text-text-muted font-medium">
-                Shopify only gives you an empty store. You still have to spend
-                months creating a product, writing copy, and hoping it sells.
-                It's built for physical goods, not digital ease.
+                Best for businesses running significant inventory operations. Complex setup, requiring independent product sourcing and fulfillment logistics.
               </p>
             </div>
-            <div className="neo-card p-8 flex flex-col gap-4 border-error/20 bg-bg-card opacity-80">
-              <div className="text-error font-black text-xl mb-2 flex items-center gap-2">
-                2. The Gumroad Ghost Town
+            <div className="neo-card p-8 flex flex-col gap-4 border-border-subtle bg-bg-card opacity-80">
+              <div className="text-text-main font-black text-xl mb-2 flex items-center gap-2">
+                2. Gumroad / Link Tools
               </div>
               <p className="text-text-muted font-medium">
-                Gumroad gives you a checkout page, but zero products. You are
-                entirely on your own for product research and creation.
+                Provides a blank canvas and checkout capabilities. Ideal if you have 6 months to spend researching, building, and designing your own digital products from scratch.
               </p>
             </div>
             <div className="neo-card p-8 flex flex-col gap-4 border-primary shadow-[0_0_20px_rgba(57,255,20,0.1)] bg-bg-card relative transform md:-translate-y-4">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-bg-base px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">
-                The Solution
+                Creator-First
               </div>
               <div className="text-text-main font-black text-xl mb-2 flex items-center gap-2 mt-4">
-                3. The BioHere Way
+                3. The BioHere Platform
               </div>
               <p className="text-text-muted font-medium">
-                We give you the store AND the exact products to put in it.
-                Market-tested, high-converting digital products ready to sell
-                immediately.
+                Designed exclusively for creators. Get instant access to Lakshya's proven digital assets, pre-loaded into a high-converting storefront that you own and control.
               </p>
             </div>
           </div>
@@ -151,10 +144,10 @@ export default function PublicLanding() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-20 text-center">
             <h2 className="heading-display text-4xl md:text-5xl text-text-main mb-4">
-              A Complete Business-in-a-Box
+              Creator Commerce Infrastructure
             </h2>
             <p className="text-text-muted text-xl max-w-2xl mx-auto">
-              Everything you need to go from zero to your first sale by tonight.
+              Everything you need to launch a high-margin digital storefront, powered by proven assets.
             </p>
           </div>
 
@@ -164,18 +157,16 @@ export default function PublicLanding() {
                 <Package className="w-8 h-8" />
               </div>
               <h3 className="heading-display text-4xl text-text-main">
-                Done-For-You Products
+                The Founder's Vault
               </h3>
               <p className="text-xl text-text-muted leading-relaxed font-medium">
-                Get instant access to a massive catalog of Private Label Rights
-                (PLR) ebooks, notion templates, chatgpt prompt bundles, and
-                courses. We created them, you sell them as your own.
+                Every product available for resale on BioHere originates from Lakshya Gupta's proven portfolio. We handle the licensing and fulfillment, so you can leverage high-converting digital resources instantly.
               </p>
               <ul className="space-y-3 pt-4">
                 {[
-                  "Highly demanded digital products.",
-                  "No inventory or shipping required.",
-                  "You set the price, keep 80% of the profit margin.",
+                  "Access to premium ebooks, templates, and bundles.",
+                  "Zero product creation or maintenance required.",
+                  "Set your own price and maintain 80% margins.",
                 ].map((item, i) => (
                   <li
                     key={i}
@@ -263,15 +254,14 @@ export default function PublicLanding() {
         <div className="absolute inset-0 bg-primary/5 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
           <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-text-main text-bg-base font-black text-sm uppercase tracking-widest mb-8">
-            No Risk, High Reward
+            Start Your Journey
           </div>
           <h2 className="heading-display text-5xl md:text-6xl tracking-tight mb-6 text-text-main">
             Skip the hard part. <br />
-            Go straight to selling.
+            Leverage what works.
           </h2>
           <p className="text-xl text-text-muted mb-10 leading-relaxed max-w-2xl font-medium">
-            You don't need to be an expert to make money online. You just need
-            the right products and a storefront that converts. We give you both.
+            You don't need to spend months creating products from scratch. Access Lakshya's best-selling creator assets and resell them through a branded storefront today.
           </p>
           <div className="flex flex-col items-center w-full">
             <Link

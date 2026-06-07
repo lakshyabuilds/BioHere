@@ -44,11 +44,11 @@ export default function Pricing() {
               </div>
               <div>
                 <h4 className="text-xl font-bold text-text-main flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0">
-                  <span>Curated Digital Products Catalog</span>
+                  <span>Founder's Asset Catalog</span>
                   <span className="line-through text-text-muted text-sm sm:text-base font-normal">₹9,900 Value</span>
                 </h4>
                 <p className="text-text-muted font-medium mt-1">
-                  Instant access to our library of PLR ebooks, templates, and courses. Sell them as your own immediately.
+                  Instant access to our curated library of creator-tested products proven to convert real traffic.
                 </p>
               </div>
             </div>
@@ -59,11 +59,11 @@ export default function Pricing() {
               </div>
               <div>
                 <h4 className="text-xl font-bold text-text-main flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0">
-                  <span>1-Click High-Converting Storefront</span>
+                  <span>1-Click Branded Storefront</span>
                   <span className="line-through text-text-muted text-sm sm:text-base font-normal">₹4,900 Value</span>
                 </h4>
                 <p className="text-text-muted font-medium mt-1">
-                  A mobile-optimized store engineered purely to convert visitors into buyers effortlessly.
+                  A mobile-optimized store engineered purely to convert followers into buyers effortlessly.
                 </p>
               </div>
             </div>
@@ -74,20 +74,27 @@ export default function Pricing() {
               </div>
               <div>
                 <h4 className="text-xl font-bold text-text-main flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0">
-                  <span>Done-For-You Payment Processing</span>
+                  <span>Done-For-You Fulfillment</span>
                   <span className="line-through text-text-muted text-sm sm:text-base font-normal">₹1,900 Value</span>
                 </h4>
                 <p className="text-text-muted font-medium mt-1">
-                  We handle the transactions. No complex Stripe or Razorpay setups required on your end.
+                  We handle the transactions, security, and digital product delivery automatically.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="pt-6 border-t border-border-subtle mt-8">
+          <div className="pt-6 border-t border-border-subtle mt-8 space-y-6">
             <div className="flex justify-between items-center text-xl font-bold text-text-muted">
               <span>Total Real World Value:</span>
               <span className="line-through">₹16,700/year</span>
+            </div>
+            
+            <div className="bg-bg-surface border border-border-subtle p-6 rounded-2xl">
+              <h4 className="text-lg font-bold text-text-main mb-2">Why ₹1 for the trial instead of free?</h4>
+              <p className="text-text-muted text-sm leading-relaxed">
+                The ₹1 authorization is used purely to verify legitimate payment methods and prevent automated spam bots or fake storefront abuse from accessing the premium catalog. After 7 days, it transitions to the ₹99/month plan. You are fully informed of the terms before checkout.
+              </p>
             </div>
           </div>
         </div>

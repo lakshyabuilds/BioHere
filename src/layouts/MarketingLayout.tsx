@@ -16,8 +16,8 @@ export default function MarketingLayout() {
           </Link>
           <div className="hidden md:flex gap-6 items-center text-sm font-medium text-text-muted">
             <Link to="/pricing" className="hover:text-text-main transition-colors">Pricing</Link>
+            <Link to="/catalog" className="hover:text-text-main transition-colors">Catalog</Link>
             <Link to="/use-cases" className="hover:text-text-main transition-colors">Use Cases</Link>
-            <Link to="/about" className="hover:text-text-main transition-colors">About</Link>
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden md:block">
@@ -47,16 +47,19 @@ export default function MarketingLayout() {
                <span className="text-sm font-bold tracking-tight text-text-main">BioHere</span>
              </Link>
              <p className="text-text-muted text-xs leading-relaxed">
-               Your link-in-bio and digital storefront. Made for real creators.
+               Creator monetization platform powered by proven digital assets.
              </p>
           </div>
           <div className="flex gap-12 text-sm text-text-muted">
              <div className="flex flex-col gap-2">
+                <Link to="/catalog" className="hover:text-text-main transition-colors">Public Catalog</Link>
                 <Link to="/use-cases" className="hover:text-text-main transition-colors">Use Cases</Link>
                 <Link to="/pricing" className="hover:text-text-main transition-colors">Pricing</Link>
                 <Link to="/comparisons" className="hover:text-text-main transition-colors">Alternatives</Link>
              </div>
              <div className="flex flex-col gap-2">
+                <Link to="/founder" className="hover:text-text-main transition-colors">Meet Founder</Link>
+                <Link to="/proof" className="hover:text-text-main transition-colors">Track Record</Link>
                 <Link to="/about" className="hover:text-text-main transition-colors">About</Link>
                 <Link to="/contact" className="hover:text-text-main transition-colors">Contact</Link>
                 <Link to="/faq" className="hover:text-text-main transition-colors">FAQ</Link>
